@@ -8,7 +8,9 @@ Span-first `System.IO` alternatives for .NET. Path parameters are `ReadOnlySpan<
 
 FileSystemics was created for those workloads — log sinks, render and asset pipelines, scanners, build tools, sync agents, and test harnesses that touch many files per second. The core idea is simple: keep paths as `ReadOnlySpan<char>` through join, normalize, enumerate, and open, and let the caller supply `Span<char>` scratch space (or rent a `char[]` when paths exceed the stack threshold) instead of forcing intermediate strings on every call.
 
-This bypasses a lot of the BCL internal logic and there are other micro-performance tradeoffs. We're trading some nanoseconds for memory stability across a complex system, which should improve overall speed. Caveat artifex.
+This bypasses a lot of the BCL internal logic and there are other micro-performance tradeoffs. We're trading some nanoseconds for memory stability across a complex system, which should improve overall speed. 
+
+Caveat artifex.
 
 ## Packages
 
