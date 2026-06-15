@@ -1,0 +1,36 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{cs,csproj,sln}]
+dotnet_sort_system_directives_first = true
+
+[*.cs]
+# K&R bracing: opening brace on the same line as the control statement
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+csharp_new_line_before_catch = false
+csharp_new_line_before_finally = false
+csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_members_in_anonymous_types = false
+
+# Prefer explicit types over var
+csharp_style_var_for_built_in_types = false:error
+csharp_style_var_when_type_is_apparent = false:error
+csharp_style_var_elsewhere = false:error
+dotnet_diagnostic.IDE0008.severity = error
+
+# Prefer deconstruction for tuples and key-value pairs
+csharp_style_deconstructed_variable_declaration = true:error
+csharp_style_prefer_extended_property_pattern = true:suggestion
+dotnet_diagnostic.IDE0042.severity = error
+
+# Brace layout
+csharp_prefer_braces = true:suggestion
+dotnet_diagnostic.IDE0011.severity = suggestion

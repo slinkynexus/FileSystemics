@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>FileSystemics.IO</RootNamespace>
+    <AssemblyName>FileSystemics.SpanIO.Platform</AssemblyName>
+    <Description>Swappable platform hosts and default ISpanFileSystem adapters for FileSystemics.SpanIO.</Description>
+    <PackageId>FileSystemics.SpanIO.Platform</PackageId>
+    <PackageTags>filesystem;platform;host;spanio;io;dotnet</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileSystemics.SpanIO\FileSystemics.SpanIO.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,44 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Ll]og/
+[Ll]ogs/
+[Tt]est[Rr]esults/
+
+## Visual Studio / Rider / VS Code / Cursor
+.vs/
+.idea/
+.idea_old/
+.cursor
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+BenchmarkDotNet.Artifacts/
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Misc
+build-output.txt
+*.log
+tmp-pathcmp/
+scripts/

@@ -1,0 +1,42 @@
+name: SpanIO CI
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'benchmark/**'
+      - 'FileSystemics.slnx'
+      - 'global.json'
+      - 'Directory.Build.props'
+      - '.github/workflows/spanio-ci.yml'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'benchmark/**'
+      - 'FileSystemics.slnx'
+      - 'global.json'
+      - 'Directory.Build.props'
+      - '.github/workflows/spanio-ci.yml'
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore FileSystemics.slnx
+      - name: Build
+        run: dotnet build FileSystemics.slnx --no-restore -c Release
+      - name: Test SpanIO
+        run: dotnet test --solution FileSystemics.slnx --no-build -c Release

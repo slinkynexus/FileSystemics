@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>FileSystemics.IO</RootNamespace>
+    <AssemblyName>FileSystemics.SpanIO</AssemblyName>
+    <Description>Span-first System.IO alternatives using ReadOnlySpan&lt;char&gt; path parameters.</Description>
+    <PackageId>FileSystemics.SpanIO</PackageId>
+    <PackageTags>filesystem;span;io;low-allocation;path;directory;file;dotnet</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="FileSystemics.SpanIO.Tests" />
+    <InternalsVisibleTo Include="FileSystemics.SpanIO.Platform" />
+    <InternalsVisibleTo Include="FileSystemics.SpanIO.Platform.Tests" />
+  </ItemGroup>
+
+</Project>

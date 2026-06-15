@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FileSystemics.SpanIO.Platform.Tests</RootNamespace>
+    <AssemblyName>FileSystemics.SpanIO.Platform.Tests</AssemblyName>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TUnit" Version="*" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FileSystemics.SpanIO.Platform\FileSystemics.SpanIO.Platform.csproj" />
+    <ProjectReference Include="..\..\src\FileSystemics.SpanIO\FileSystemics.SpanIO.csproj" />
+  </ItemGroup>
+
+</Project>

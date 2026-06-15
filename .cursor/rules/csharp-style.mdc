@@ -1,0 +1,79 @@
+---
+description: C# formatting and style conventions for FileSystemics
+globs: **/*.cs
+alwaysApply: false
+---
+
+# C# style (FileSystemics)
+
+Follow the repository [.editorconfig](../../.editorconfig) for automated formatting. Run `dotnet format` (or `python3 scripts/reformat-kr.py` for bulk K&R migration) before committing C# changes. These rules apply to all C# in this repository.
+
+## K&R bracing
+
+Opening braces stay on the same line as the statement they belong to.
+
+```csharp
+// Good
+if (path.IsEmpty) {
+    return false;
+}
+
+public static bool Exists(ReadOnlySpan<char> path) {
+    ...
+}
+
+// Bad (Allman)
+if (path.IsEmpty)
+{
+    return false;
+}
+```
+
+## Explicit types
+
+Do not use `var`. Always declare the explicit type.
+
+```csharp
+// Good
+string path = GetTempPath();
+List<string> results = [];
+
+// Bad
+var path = GetTempPath();
+var results = new List<string>();
+```
+
+## Key-value deconstruction
+
+When iterating key-value pairs, deconstruct in the `foreach` (or assignment). Do not bind a `KeyValuePair<,>` variable.
+
+```csharp
+// Good
+foreach ((string key, MemoryFileData value) in files) {
+    ...
+}
+
+// Bad
+foreach (KeyValuePair<string, MemoryFileData> entry in files) {
+    ...
+}
+```
+
+Apply the same pattern to tuple returns and other multi-value bindings when the values are used separately.
+
+## String interpolation
+
+Always use string interpolation (`$"..."`) instead of the `+` operator to build strings from literals, variables, or expressions.
+
+```csharp
+// Good
+string path = $"{directory}{separator}{fileName}";
+string message = $"File not found: {path} (errno {errno})";
+throw new IOException($"Native error (errno {errno})");
+
+// Bad
+string path = directory + separator + fileName;
+string message = "File not found: " + path + " (errno " + errno + ")";
+```
+
+Use `string.Create`, `StringBuilder`, or `Span<char>` only when you are deliberately avoiding allocations or building incrementally in a hot loop—not as a substitute for simple interpolation.

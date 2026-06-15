@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/FileSystemics.SpanIO/FileSystemics.SpanIO.csproj" />
+  <Project Path="src/FileSystemics.SpanIO.Platform/FileSystemics.SpanIO.Platform.csproj" />
+  <Project Path="benchmark/FileSystemics.SpanIO.Benchmarks/FileSystemics.SpanIO.Benchmarks.csproj" />
+  <Project Path="test/FileSystemics.SpanIO.Tests/FileSystemics.SpanIO.Tests.csproj" />
+  <Project Path="test/FileSystemics.SpanIO.Platform.Tests/FileSystemics.SpanIO.Platform.Tests.csproj" />
+</Solution>
